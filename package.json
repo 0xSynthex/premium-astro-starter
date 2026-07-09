@@ -9,7 +9,8 @@
     "preview": "astro preview --host 127.0.0.1",
     "test": "playwright test",
     "qa": "npm run build && playwright test",
-    "screenshots": "playwright test tests/screenshot.spec.ts --update-snapshots"
+    "screenshots": "playwright test tests/screenshot.spec.ts --update-snapshots",
+    "optimize:images": "python3 scripts/optimize-images.py"
   },
   "dependencies": {
     "@astrojs/check": "latest",
