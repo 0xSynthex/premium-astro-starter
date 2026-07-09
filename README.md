@@ -8,7 +8,8 @@ Free/open-source starter for professional landing pages.
 - CSS design tokens in `src/styles/global.css`
 - premium editorial landing example
 - Playwright desktop/mobile smoke + screenshot QA
-- GitHub Actions workflow for free GitHub Pages deploys
+- GitHub Pages deploy path via committed `docs/` output
+- GitHub Actions workflow template kept disabled because the current GitHub token lacks `workflow` scope
 - no paid APIs required
 
 ## Commands
@@ -30,13 +31,16 @@ npm run qa
 5. Run `npm run qa` before delivery.
 6. If deploying, verify live URL with curl/browser.
 
-## GitHub Pages
+## GitHub Pages free deploy
 
-This repo includes `.github/workflows/pages.yml`.
+This repo uses the free branch deploy path:
 
-- Push to `main`.
-- In GitHub repo settings, set Pages source to GitHub Actions if needed.
-- The workflow runs audit, build, and Playwright tests before deploy.
+1. Run `npm run qa`.
+2. Copy `dist/` to `docs/`.
+3. Commit and push `docs/`.
+4. Configure GitHub Pages source as `main` branch, `/docs` folder.
+
+A GitHub Actions workflow template is stored at `.github/workflows.disabled/pages.yml.template`. To enable Actions deploy later, re-authenticate `gh` with `workflow` scope, move it to `.github/workflows/pages.yml`, and push.
 
 ## Security
 
