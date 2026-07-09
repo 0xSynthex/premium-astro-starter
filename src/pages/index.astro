@@ -1,0 +1,91 @@
+---
+import '../styles/global.css';
+
+const proofPoints = ['Sharp offer above the fold', 'Proof before decoration', 'Mobile CTA path checked'];
+const briefItems = ['Goal + audience', 'Primary CTA', '3–10 references', 'Brand mood', 'Assets + proof', 'Must avoid', 'Stack + deploy', 'Urgency + fidelity'];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Premium Astro starter for professional conversion-focused websites." />
+    <title>Premium Website Starter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <nav class="nav" aria-label="Primary">
+            <a href="/">Premium Starter</a>
+            <a href="#brief">Brief checklist</a>
+          </nav>
+
+          <div>
+            <p class="pill kicker">Decide / Learn surface</p>
+            <h1>Build websites that feel expensive before they explain themselves.</h1>
+            <p class="lede">A free, production-minded starter for premium landing pages: reference-led direction, compact design tokens, conversion hierarchy, and Playwright visual QA.</p>
+            <div class="cta-row">
+              <a class="cta-primary" href="#brief">Start with a real brief</a>
+              <a class="cta-secondary" href="#qa">View QA rules</a>
+            </div>
+          </div>
+
+          <ul class="proof-list" aria-label="Quality rules">
+            {proofPoints.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+
+        <aside class="board-wrap" aria-label="Design system preview">
+          <div class="board-glow"></div>
+          <div class="board">
+            <div class="board-head">
+              <div>
+                <p class="eyebrow">Direction board</p>
+                <p class="muted">No generic SaaS filler</p>
+              </div>
+              <span class="version">v1</span>
+            </div>
+
+            <div class="board-grid">
+              <article class="dark-card">
+                <p class="muted">Composition</p>
+                <h2>One idea per section.</h2>
+              </article>
+              <div class="two-col">
+                <article class="board-card">
+                  <p class="muted">Type</p>
+                  <p class="big-label display">Editorial weight</p>
+                </article>
+                <article class="board-card">
+                  <p class="muted">CTA</p>
+                  <p class="big-label">Clear path</p>
+                </article>
+              </div>
+              <article class="qa-card" id="qa">
+                <p class="eyebrow">QA gate</p>
+                <p class="muted">Build, browser, console, mobile screenshot, and slop audit before claiming done.</p>
+              </article>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="brief" class="brief">
+        <div class="brief-inner">
+          <p class="eyebrow">Brief before design</p>
+          <div class="brief-layout">
+            <h2>Ask the questions that make the page worth more.</h2>
+            <div class="brief-grid">
+              {briefItems.map((item) => <div class="brief-card">{item}</div>)}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
