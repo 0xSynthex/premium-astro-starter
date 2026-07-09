@@ -8,6 +8,8 @@ Free/open-source starter for professional landing pages.
 - CSS design tokens in `src/styles/global.css`
 - premium editorial landing example
 - reusable Astro section library in `src/components/sections/`
+- copy/conversion templates in `copy/`
+- website QA report template in `qa/`
 - Playwright desktop/mobile smoke + screenshot QA
 - free local image optimization via ImageMagick + cwebp
 - GitHub Pages deploy path via committed `docs/` output
@@ -29,10 +31,11 @@ npm run optimize:images -- assets/raw public/images
 
 1. Collect website brief: goal, audience, CTA, references, assets, constraints.
 2. Choose surface type. Landing pages are usually Decide/Learn.
-3. Define compact design system in `src/styles/global.css`.
-4. Implement in `src/pages/index.astro` or split into components for larger sites.
-5. Run `npm run qa` before delivery.
-6. If deploying, verify live URL with curl/browser.
+3. Draft copy with `copy/landing-brief.md`, `copy/hero-formulas.md`, and `copy/objections.md`.
+4. Define compact design system in `src/styles/global.css`.
+5. Implement in `src/pages/index.astro` or split into components for larger sites.
+6. Run `npm run qa` and fill `qa/website-qa-template.md` before delivery.
+7. If deploying, verify live URL with curl/browser.
 
 ## GitHub Pages free deploy
 
@@ -82,6 +85,28 @@ Reusable sections live in `src/components/sections/`:
 - `MobileStickyCta.astro` — mobile sticky CTA
 
 Rule: use sections to clarify the offer, prove trust, answer objections, or move the user toward the CTA. Delete any section that becomes filler.
+
+## Copy and conversion
+
+Templates live in `copy/`:
+
+- `landing-brief.md` — collect offer, audience, proof, objections, tone, CTA
+- `hero-formulas.md` — headline/subcopy/CTA structures
+- `objections.md` — map objections to page sections
+
+Full framework:
+
+```text
+/home/hermes/wiki/design/copy-conversion-framework.md
+```
+
+QA template:
+
+```text
+qa/website-qa-template.md
+```
+
+Rules: never invent testimonials, logos, metrics, or outcomes. Use real proof, process clarity, or ask for missing business input.
 
 ## Free recommended additions
 
