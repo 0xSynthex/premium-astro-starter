@@ -25,6 +25,7 @@ npm run build
 npm run test
 npm run qa
 npm run optimize:images -- assets/raw public/images
+~/bin/create-premium-site my-project
 ```
 
 ## Workflow
@@ -107,6 +108,16 @@ qa/website-qa-template.md
 ```
 
 Rules: never invent testimonials, logos, metrics, or outcomes. Use real proof, process clarity, or ask for missing business input.
+
+## Create a new project
+
+Use the local generator:
+
+```bash
+~/bin/create-premium-site my-project
+```
+
+It copies this starter without `.git`, `node_modules`, build output, `docs`, test output, or `.env*`; updates `package.json`; creates project folders; and initializes a fresh local git repo. It does not push or create a GitHub repo.
 
 ## Free recommended additions
 
