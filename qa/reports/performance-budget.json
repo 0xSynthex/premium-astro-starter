@@ -1,0 +1,39 @@
+{
+  "url": "http://127.0.0.1:4321/",
+  "title": "Premium Website Starter",
+  "budgets": {
+    "totalKb": 450,
+    "jsKb": 120,
+    "cssKb": 120,
+    "imageKb": 250,
+    "requestCount": 25,
+    "domContentLoadedMs": 1500
+  },
+  "dist": {
+    "totalKb": 14.4,
+    "jsKb": 0,
+    "cssKb": 7.7,
+    "imageKb": 0,
+    "largestFiles": [
+      {
+        "file": "dist/_astro/index.DByKPpCT.css",
+        "kb": 7.7
+      },
+      {
+        "file": "dist/index.html",
+        "kb": 6.7
+      },
+      {
+        "file": "dist/images/.gitkeep",
+        "kb": 0
+      }
+    ]
+  },
+  "browser": {
+    "requestCount": 5,
+    "domContentLoadedMs": 24,
+    "loadMs": 142
+  },
+  "passed": true,
+  "failures": []
+}

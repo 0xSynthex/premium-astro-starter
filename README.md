@@ -24,6 +24,8 @@ npm run dev
 npm run build
 npm run test
 npm run qa
+npm run qa:perf
+npm run qa:full
 npm run optimize:images -- assets/raw public/images
 ~/bin/create-premium-site my-project
 ```
@@ -108,6 +110,28 @@ qa/website-qa-template.md
 ```
 
 Rules: never invent testimonials, logos, metrics, or outcomes. Use real proof, process clarity, or ask for missing business input.
+
+## Performance budget
+
+Run the free local budget check:
+
+```bash
+npm run qa:perf
+```
+
+It builds the site, checks `dist/` asset budgets, opens the page with Playwright, counts requests, and writes:
+
+```text
+qa/reports/performance-budget.json
+```
+
+Default budgets can be overridden per run:
+
+```bash
+PERF_TOTAL_KB=650 PERF_IMAGE_KB=400 npm run qa:perf
+```
+
+Use `npm run qa:full` before serious delivery.
 
 ## Create a new project
 

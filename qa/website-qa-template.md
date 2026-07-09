@@ -12,7 +12,18 @@ Reviewer:
 - [ ] No console errors
 - [ ] Desktop screenshot checked
 - [ ] Mobile screenshot checked
+- [ ] Performance budget checked (`npm run qa:perf`)
 - [ ] CTA/form path checked
+
+## Performance budget
+
+- Total KB:
+- JS KB:
+- CSS KB:
+- Image KB:
+- Request count:
+- DOMContentLoaded:
+- Report: `qa/reports/performance-budget.json`
 
 ## Copy / conversion
 

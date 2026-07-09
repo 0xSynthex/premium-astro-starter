@@ -9,6 +9,8 @@
     "preview": "astro preview --host 127.0.0.1",
     "test": "playwright test",
     "qa": "npm run build && playwright test",
+    "qa:perf": "npm run build && (npm run preview > /tmp/premium-astro-preview.log 2>&1 & pid=$!; trap 'kill $pid 2>/dev/null || true' EXIT; for i in 1 2 3 4 5 6 7 8 9 10; do curl -fsS http://127.0.0.1:4321 >/dev/null && break; sleep 1; done; node scripts/performance-budget.mjs)",
+    "qa:full": "npm run qa && npm run qa:perf",
     "screenshots": "playwright test tests/screenshot.spec.ts --update-snapshots",
     "optimize:images": "python3 scripts/optimize-images.py"
   },
