@@ -29,6 +29,8 @@ npm run qa:perf
 npm run qa:full
 npm run optimize:images -- assets/raw public/images
 ~/bin/create-premium-site my-project
+# or from this repo:
+python3 scripts/create-premium-site.py my-project
 ```
 
 ## Workflow
@@ -151,6 +153,8 @@ Use the local generator:
 
 ```bash
 ~/bin/create-premium-site my-project
+# or from this repo:
+python3 scripts/create-premium-site.py my-project
 ```
 
 It copies this starter without `.git`, `node_modules`, build output, `docs`, test output, or `.env*`; updates `package.json`; creates project folders; adds `copy/project-intake.md`, `references/README.md`, `qa/qa-plan.md`, `notes/project-log.md`, project `AGENTS.md`; and initializes a fresh local git repo. It does not push or create a GitHub repo.
