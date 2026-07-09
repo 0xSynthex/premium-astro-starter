@@ -8,6 +8,7 @@ import ProcessSteps from '../components/sections/ProcessSteps.astro';
 import ComparisonBand from '../components/sections/ComparisonBand.astro';
 import FaqList from '../components/sections/FaqList.astro';
 import FinalCta from '../components/sections/FinalCta.astro';
+import LeadCaptureForm from '../components/sections/LeadCaptureForm.astro';
 import MobileStickyCta from '../components/sections/MobileStickyCta.astro';
 
 const proofPoints = ['Sharp offer above the fold', 'Proof before decoration', 'Mobile CTA path checked'];
@@ -96,7 +97,7 @@ const faqs = [
           <h2>Reusable patterns without committing to filler.</h2>
         </div>
         <div class="section-inner library-grid">
-          {['HeroEditorial', 'ProofBar', 'ProcessSteps', 'ComparisonBand', 'BriefChecklist', 'FaqList', 'FinalCta', 'MobileStickyCta'].map((item) => (
+          {['HeroEditorial', 'ProofBar', 'ProcessSteps', 'ComparisonBand', 'BriefChecklist', 'FaqList', 'LeadCaptureForm', 'FinalCta', 'MobileStickyCta'].map((item) => (
             <article class="library-card">
               <span>Astro</span>
               <strong>{item}</strong>
@@ -106,6 +107,7 @@ const faqs = [
       </section>
 
       <FaqList title="Use the sections as a system, not as a template pile." items={faqs} />
+      <LeadCaptureForm title="Capture intent without choosing the backend too early." body="Use this section as the safe baseline for lead forms: accessible labels, honeypot protection, privacy copy, and analytics hooks. Replace the action only when the project backend is approved." submitLabel="Send a safe brief" />
       <FinalCta title="Start from references, then compose the page." body="Use the brief, reference workflow, section library, image pipeline, and Playwright QA together. That is the minimum loop for expensive-looking landing pages." primaryLabel="Open the brief checklist" primaryHref="#brief" />
       <MobileStickyCta href="#brief" />
     </main>

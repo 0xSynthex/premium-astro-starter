@@ -337,6 +337,7 @@ h1 {
 .split-heading h2,
 .comparison-shell h2,
 .faq-layout h2,
+.lead-copy h2,
 .final-cta-card h2 {
   margin: 0;
   font-size: clamp(42px, 6vw, 72px);
@@ -344,7 +345,8 @@ h1 {
 }
 
 .process-section,
-.faq-section {
+.faq-section,
+.lead-section {
   background: var(--canvas);
 }
 
@@ -394,7 +396,8 @@ h1 {
 }
 
 .comparison-shell,
-.faq-layout {
+.faq-layout,
+.lead-layout {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: clamp(32px, 6vw, 80px);
@@ -490,6 +493,91 @@ h1 {
   letter-spacing: -0.02em;
 }
 
+.lead-layout {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.lead-copy p {
+  max-width: 660px;
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.65;
+}
+
+.lead-rules {
+  display: grid;
+  gap: 10px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lead-rules li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  padding: 10px 14px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.lead-form {
+  display: grid;
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background: var(--surface);
+  padding: clamp(20px, 4vw, 32px);
+  box-shadow: var(--shadow-soft);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.lead-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.lead-form input,
+.lead-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--canvas);
+  color: var(--ink);
+  padding: 14px 16px;
+  font: inherit;
+}
+
+.lead-form textarea {
+  resize: vertical;
+}
+
+.form-note,
+.form-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.form-status {
+  font-weight: 800;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
 .final-cta {
   background: var(--canvas);
 }
@@ -532,6 +620,7 @@ h1 {
   .library-grid,
   .comparison-shell,
   .faq-layout,
+  .lead-layout,
   .split-heading {
     grid-template-columns: 1fr;
   }
@@ -570,7 +659,8 @@ h1 {
   }
 
   .comparison-head,
-  .comparison-row {
+  .comparison-row,
+  .form-grid {
     grid-template-columns: 1fr;
   }
 

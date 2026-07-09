@@ -11,6 +11,7 @@ Reusable Astro sections for premium landing pages. Keep copy concrete and proof-
 - `ProcessSteps.astro` — process/how-it-works sequence.
 - `ComparisonBand.astro` — generic vs premium comparison rows.
 - `FaqList.astro` — native `<details>` FAQ block.
+- `LeadCaptureForm.astro` — accessible backend-neutral lead form with honeypot/privacy/tracking hooks.
 - `FinalCta.astro` — final conversion section.
 - `MobileStickyCta.astro` — mobile-only sticky CTA.
 
@@ -21,3 +22,4 @@ Reusable Astro sections for premium landing pages. Keep copy concrete and proof-
 - Landing pages are usually Decide/Learn surfaces: one idea per section.
 - If a component encourages filler, rewrite the content or delete the component.
 - Verify desktop/mobile screenshots after composing sections.
+- Never wire a form to production storage until backend, privacy, retention, and deletion policy are ready.

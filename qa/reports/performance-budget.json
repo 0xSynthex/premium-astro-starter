@@ -10,18 +10,18 @@
     "domContentLoadedMs": 1500
   },
   "dist": {
-    "totalKb": 14.4,
+    "totalKb": 17.8,
     "jsKb": 0,
-    "cssKb": 7.7,
+    "cssKb": 8.8,
     "imageKb": 0,
     "largestFiles": [
       {
-        "file": "dist/_astro/index.DByKPpCT.css",
-        "kb": 7.7
+        "file": "dist/index.html",
+        "kb": 9.1
       },
       {
-        "file": "dist/index.html",
-        "kb": 6.7
+        "file": "dist/_astro/index.4fD_pgyF.css",
+        "kb": 8.8
       },
       {
         "file": "dist/images/.gitkeep",
@@ -31,8 +31,8 @@
   },
   "browser": {
     "requestCount": 5,
-    "domContentLoadedMs": 24,
-    "loadMs": 142
+    "domContentLoadedMs": 139,
+    "loadMs": 295
   },
   "passed": true,
   "failures": []

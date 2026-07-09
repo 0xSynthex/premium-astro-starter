@@ -12,6 +12,8 @@ test('homepage renders primary conversion path', async ({ page }) => {
   await expect(page.getByText(/Brief before design/i)).toBeVisible();
   await expect(page.getByText('Section library', { exact: true })).toBeVisible();
   await expect(page.getByText(/ProofBar/i)).toBeVisible();
+  await expect(page.getByText(/LeadCaptureForm/i)).toBeVisible();
+  await expect(page.getByRole('button', { name: /Send a safe brief/i })).toBeVisible();
   await expect(page.getByText(/Use the sections as a system/i)).toBeVisible();
   expect(consoleErrors).toEqual([]);
 });

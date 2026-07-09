@@ -8,6 +8,7 @@ Free/open-source starter for professional landing pages.
 - CSS design tokens in `src/styles/global.css`
 - premium editorial landing example
 - reusable Astro section library in `src/components/sections/`
+- backend-neutral lead capture form pattern in `forms/`
 - copy/conversion templates in `copy/`
 - website QA report template in `qa/`
 - Playwright desktop/mobile smoke + screenshot QA
@@ -84,6 +85,7 @@ Reusable sections live in `src/components/sections/`:
 - `ProcessSteps.astro` — how-it-works/process sequence
 - `ComparisonBand.astro` — generic vs premium comparison
 - `FaqList.astro` — native FAQ block
+- `LeadCaptureForm.astro` — accessible lead form with honeypot/privacy/tracking hooks
 - `FinalCta.astro` — final conversion block
 - `MobileStickyCta.astro` — mobile sticky CTA
 
@@ -110,6 +112,16 @@ qa/website-qa-template.md
 ```
 
 Rules: never invent testimonials, logos, metrics, or outcomes. Use real proof, process clarity, or ask for missing business input.
+
+## Lead capture forms
+
+Use `src/components/sections/LeadCaptureForm.astro` and read:
+
+```text
+forms/lead-capture.md
+```
+
+The form is backend-neutral by default. It includes visible labels, honeypot anti-spam, privacy copy, loading/status hooks, and a `lead_form_submit` browser event. Replace `action="#"` only after the project backend and data policy are approved.
 
 ## Performance budget
 

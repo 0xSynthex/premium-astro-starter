@@ -1,0 +1,91 @@
+---
+export interface Props {
+  eyebrow?: string;
+  title: string;
+  body: string;
+  action?: string;
+  method?: 'get' | 'post';
+  privacyText?: string;
+  submitLabel?: string;
+}
+
+const {
+  eyebrow = 'Lead capture',
+  title,
+  body,
+  action = '#',
+  method = 'post',
+  privacyText = 'We only use this information to respond to your request. Do not collect sensitive data unless your backend and policy are ready.',
+  submitLabel = 'Send brief',
+} = Astro.props;
+---
+
+<section id="contact" class="section lead-section">
+  <div class="section-inner lead-layout">
+    <div class="lead-copy">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+      <p>{body}</p>
+      <ul class="lead-rules" aria-label="Form safeguards">
+        <li>Accessible labels</li>
+        <li>Honeypot field</li>
+        <li>Loading/success/error hooks</li>
+        <li>Privacy copy included</li>
+      </ul>
+    </div>
+
+    <form class="lead-form" action={action} method={method} data-track-form="lead" aria-describedby="lead-privacy lead-status">
+      <div class="form-grid">
+        <label>
+          <span>Name</span>
+          <input name="name" autocomplete="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+      </div>
+      <label>
+        <span>Company / project</span>
+        <input name="company" autocomplete="organization" />
+      </label>
+      <label>
+        <span>What do you need?</span>
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <label class="honeypot" aria-hidden="true" tabindex="-1">
+        <span>Leave this field empty</span>
+        <input name="website" autocomplete="off" tabindex="-1" />
+      </label>
+      <p id="lead-privacy" class="form-note">{privacyText}</p>
+      <p id="lead-status" class="form-status" data-form-status aria-live="polite">Ready to send.</p>
+      <button class="cta-primary" type="submit" data-submit-label={submitLabel} data-loading-label="Sending...">{submitLabel}</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-track-form="lead"]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      const currentForm = event.currentTarget;
+      if (!(currentForm instanceof HTMLFormElement)) return;
+      const honeypot = currentForm.querySelector('input[name="website"]');
+      const status = currentForm.querySelector('[data-form-status]');
+      const button = currentForm.querySelector('button[type="submit"]');
+
+      if (honeypot instanceof HTMLInputElement && honeypot.value) {
+        event.preventDefault();
+        if (status) status.textContent = 'Submission blocked.';
+        return;
+      }
+
+      window.dispatchEvent(new CustomEvent('lead_form_submit', { detail: { form: 'lead' } }));
+
+      if (button instanceof HTMLButtonElement) {
+        button.disabled = true;
+        button.textContent = button.dataset.loadingLabel || 'Sending...';
+      }
+      if (status) status.textContent = 'Sending...';
+    });
+  });
+</script>
