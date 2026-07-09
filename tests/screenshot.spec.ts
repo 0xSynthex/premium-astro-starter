@@ -8,8 +8,11 @@ test('homepage renders primary conversion path', async ({ page }) => {
 
   await page.goto('/');
   await expect(page.getByRole('heading', { name: /Build websites that feel expensive/i })).toBeVisible();
-  await expect(page.getByRole('link', { name: /Start with a real brief/i })).toBeVisible();
+  await expect(page.getByRole('link', { name: /Start with a real brief/i }).first()).toBeVisible();
   await expect(page.getByText(/Brief before design/i)).toBeVisible();
+  await expect(page.getByText('Section library', { exact: true })).toBeVisible();
+  await expect(page.getByText(/ProofBar/i)).toBeVisible();
+  await expect(page.getByText(/Use the sections as a system/i)).toBeVisible();
   expect(consoleErrors).toEqual([]);
 });
 

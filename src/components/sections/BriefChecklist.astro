@@ -1,0 +1,21 @@
+---
+export interface Props {
+  eyebrow?: string;
+  title: string;
+  items: string[];
+}
+
+const { eyebrow = 'Brief before design', title, items } = Astro.props;
+---
+
+<section id="brief" class="brief">
+  <div class="brief-inner">
+    <p class="eyebrow">{eyebrow}</p>
+    <div class="brief-layout">
+      <h2>{title}</h2>
+      <div class="brief-grid">
+        {items.map((item) => <div class="brief-card">{item}</div>)}
+      </div>
+    </div>
+  </div>
+</section>

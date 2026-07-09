@@ -1,0 +1,26 @@
+---
+export interface Faq { question: string; answer: string; }
+export interface Props {
+  eyebrow?: string;
+  title: string;
+  items: Faq[];
+}
+const { eyebrow = 'FAQ', title, items } = Astro.props;
+---
+
+<section class="section faq-section">
+  <div class="section-inner faq-layout">
+    <div>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+    </div>
+    <div class="faq-list">
+      {items.map((item) => (
+        <details>
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

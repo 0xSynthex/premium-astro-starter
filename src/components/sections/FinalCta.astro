@@ -1,0 +1,19 @@
+---
+export interface Props {
+  eyebrow?: string;
+  title: string;
+  body: string;
+  primaryLabel: string;
+  primaryHref: string;
+}
+const { eyebrow = 'Next step', title, body, primaryLabel, primaryHref } = Astro.props;
+---
+
+<section class="section final-cta">
+  <div class="section-inner final-cta-card">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>{title}</h2>
+    <p>{body}</p>
+    <a class="cta-primary" href={primaryHref}>{primaryLabel}</a>
+  </div>
+</section>

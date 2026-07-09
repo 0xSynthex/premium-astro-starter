@@ -1,0 +1,16 @@
+---
+export interface ProofItem { label: string; value: string; }
+export interface Props { items: ProofItem[]; }
+const { items } = Astro.props;
+---
+
+<section class="section proof-bar" aria-label="Trust proof">
+  <div class="section-inner proof-bar-grid">
+    {items.map((item) => (
+      <div class="proof-metric">
+        <strong>{item.value}</strong>
+        <span>{item.label}</span>
+      </div>
+    ))}
+  </div>
+</section>

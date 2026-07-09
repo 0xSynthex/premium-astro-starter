@@ -1,0 +1,44 @@
+---
+export interface Props {
+  kicker?: string;
+  title: string;
+  body: string;
+  primaryLabel: string;
+  primaryHref: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  proofPoints?: string[];
+}
+
+const {
+  kicker = 'Decide / Learn surface',
+  title,
+  body,
+  primaryLabel,
+  primaryHref,
+  secondaryLabel,
+  secondaryHref,
+  proofPoints = [],
+} = Astro.props;
+---
+
+<section class="hero-section">
+  <div class="hero-copy">
+    <slot name="nav" />
+    <div>
+      <p class="pill kicker">{kicker}</p>
+      <h1>{title}</h1>
+      <p class="lede">{body}</p>
+      <div class="cta-row">
+        <a class="cta-primary" href={primaryHref}>{primaryLabel}</a>
+        {secondaryLabel && secondaryHref && <a class="cta-secondary" href={secondaryHref}>{secondaryLabel}</a>}
+      </div>
+    </div>
+    {proofPoints.length > 0 && (
+      <ul class="proof-list" aria-label="Quality rules">
+        {proofPoints.map((item) => <li>{item}</li>)}
+      </ul>
+    )}
+  </div>
+  <slot />
+</section>

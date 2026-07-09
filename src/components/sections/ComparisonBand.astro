@@ -1,0 +1,27 @@
+---
+export interface Row { weak: string; strong: string; }
+export interface Props {
+  eyebrow?: string;
+  title: string;
+  rows: Row[];
+}
+const { eyebrow = 'Comparison', title, rows } = Astro.props;
+---
+
+<section class="section comparison-section">
+  <div class="section-inner comparison-shell">
+    <div>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+    </div>
+    <div class="comparison-table">
+      <div class="comparison-head"><span>Generic</span><span>Premium</span></div>
+      {rows.map((row) => (
+        <div class="comparison-row">
+          <p>{row.weak}</p>
+          <p>{row.strong}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

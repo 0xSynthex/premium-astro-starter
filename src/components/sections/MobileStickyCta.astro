@@ -1,0 +1,11 @@
+---
+export interface Props {
+  label?: string;
+  href: string;
+}
+const { label = 'Start with a real brief', href } = Astro.props;
+---
+
+<div class="mobile-sticky-cta">
+  <a class="cta-primary" href={href}>{label}</a>
+</div>

@@ -1,8 +1,37 @@
 ---
 import '../styles/global.css';
+import HeroEditorial from '../components/sections/HeroEditorial.astro';
+import DirectionBoard from '../components/sections/DirectionBoard.astro';
+import BriefChecklist from '../components/sections/BriefChecklist.astro';
+import ProofBar from '../components/sections/ProofBar.astro';
+import ProcessSteps from '../components/sections/ProcessSteps.astro';
+import ComparisonBand from '../components/sections/ComparisonBand.astro';
+import FaqList from '../components/sections/FaqList.astro';
+import FinalCta from '../components/sections/FinalCta.astro';
+import MobileStickyCta from '../components/sections/MobileStickyCta.astro';
 
 const proofPoints = ['Sharp offer above the fold', 'Proof before decoration', 'Mobile CTA path checked'];
 const briefItems = ['Goal + audience', 'Primary CTA', '3–10 references', 'Brand mood', 'Assets + proof', 'Must avoid', 'Stack + deploy', 'Urgency + fidelity'];
+const proofMetrics = [
+  { value: '0', label: 'paid APIs required' },
+  { value: '4', label: 'Playwright QA checks' },
+  { value: '9', label: 'section patterns included' },
+];
+const processSteps = [
+  { title: 'Brief', body: 'Collect goal, audience, CTA, references, assets, and constraints before touching layout.' },
+  { title: 'Compose', body: 'Choose the surface and build one idea per section instead of stacking generic cards.' },
+  { title: 'Verify', body: 'Run build, desktop/mobile screenshots, console checks, and a slop audit before delivery.' },
+];
+const comparisonRows = [
+  { weak: 'Starts from a template vibe', strong: 'Starts from reference analysis and conversion intent' },
+  { weak: 'Equal feature cards everywhere', strong: 'Section rhythm follows the buyer’s decision path' },
+  { weak: 'Looks fine in code', strong: 'Verified in browser on desktop and mobile' },
+];
+const faqs = [
+  { question: 'Can this starter be used for client work?', answer: 'Yes. Replace placeholder copy, use real proof/assets, and keep private client material out of public git.' },
+  { question: 'Does it require paid tooling?', answer: 'No. The baseline uses Astro, Playwright, GitHub Pages, ImageMagick, and cwebp.' },
+  { question: 'When should sections be deleted?', answer: 'Delete any section that does not clarify the offer, prove trust, answer an objection, or move the user toward the CTA.' },
+];
 ---
 
 <!doctype html>
@@ -18,74 +47,67 @@ const briefItems = ['Goal + audience', 'Primary CTA', '3–10 references', 'Bran
   </head>
   <body>
     <main class="shell">
-      <section class="hero">
-        <div class="hero-copy">
-          <nav class="nav" aria-label="Primary">
-            <a href="/">Premium Starter</a>
-            <a href="#brief">Brief checklist</a>
-          </nav>
+      <HeroEditorial
+        title="Build websites that feel expensive before they explain themselves."
+        body="A free, production-minded starter for premium landing pages: reference-led direction, reusable section patterns, conversion hierarchy, and Playwright visual QA."
+        primaryLabel="Start with a real brief"
+        primaryHref="#brief"
+        secondaryLabel="View section library"
+        secondaryHref="#sections"
+        proofPoints={proofPoints}
+      >
+        <nav class="nav" aria-label="Primary" slot="nav">
+          <a href="/">Premium Starter</a>
+          <a href="#brief">Brief checklist</a>
+        </nav>
 
-          <div>
-            <p class="pill kicker">Decide / Learn surface</p>
-            <h1>Build websites that feel expensive before they explain themselves.</h1>
-            <p class="lede">A free, production-minded starter for premium landing pages: reference-led direction, compact design tokens, conversion hierarchy, and Playwright visual QA.</p>
-            <div class="cta-row">
-              <a class="cta-primary" href="#brief">Start with a real brief</a>
-              <a class="cta-secondary" href="#qa">View QA rules</a>
-            </div>
-          </div>
-
-          <ul class="proof-list" aria-label="Quality rules">
-            {proofPoints.map((item) => <li>{item}</li>)}
-          </ul>
-        </div>
-
-        <aside class="board-wrap" aria-label="Design system preview">
-          <div class="board-glow"></div>
-          <div class="board">
-            <div class="board-head">
-              <div>
-                <p class="eyebrow">Direction board</p>
-                <p class="muted">No generic SaaS filler</p>
-              </div>
-              <span class="version">v1</span>
-            </div>
-
-            <div class="board-grid">
-              <article class="dark-card">
-                <p class="muted">Composition</p>
-                <h2>One idea per section.</h2>
+        <DirectionBoard>
+          <div class="board-grid">
+            <article class="dark-card">
+              <p class="muted">Composition</p>
+              <h2>One idea per section.</h2>
+            </article>
+            <div class="two-col">
+              <article class="board-card">
+                <p class="muted">Type</p>
+                <p class="big-label display">Editorial weight</p>
               </article>
-              <div class="two-col">
-                <article class="board-card">
-                  <p class="muted">Type</p>
-                  <p class="big-label display">Editorial weight</p>
-                </article>
-                <article class="board-card">
-                  <p class="muted">CTA</p>
-                  <p class="big-label">Clear path</p>
-                </article>
-              </div>
-              <article class="qa-card" id="qa">
-                <p class="eyebrow">QA gate</p>
-                <p class="muted">Build, browser, console, mobile screenshot, and slop audit before claiming done.</p>
+              <article class="board-card">
+                <p class="muted">CTA</p>
+                <p class="big-label">Clear path</p>
               </article>
             </div>
+            <article class="qa-card" id="qa">
+              <p class="eyebrow">QA gate</p>
+              <p class="muted">Build, browser, console, mobile screenshot, and slop audit before claiming done.</p>
+            </article>
           </div>
-        </aside>
-      </section>
+        </DirectionBoard>
+      </HeroEditorial>
 
-      <section id="brief" class="brief">
-        <div class="brief-inner">
-          <p class="eyebrow">Brief before design</p>
-          <div class="brief-layout">
-            <h2>Ask the questions that make the page worth more.</h2>
-            <div class="brief-grid">
-              {briefItems.map((item) => <div class="brief-card">{item}</div>)}
-            </div>
-          </div>
+      <BriefChecklist title="Ask the questions that make the page worth more." items={briefItems} />
+      <ProofBar items={proofMetrics} />
+      <ProcessSteps eyebrow="Workflow" title="A premium page is composed, not decorated." steps={processSteps} />
+      <ComparisonBand eyebrow="Quality bar" title="Replace AI-looking defaults with decision-led sections." rows={comparisonRows} />
+
+      <section id="sections" class="section section-library">
+        <div class="section-inner split-heading">
+          <p class="eyebrow">Section library</p>
+          <h2>Reusable patterns without committing to filler.</h2>
+        </div>
+        <div class="section-inner library-grid">
+          {['HeroEditorial', 'ProofBar', 'ProcessSteps', 'ComparisonBand', 'BriefChecklist', 'FaqList', 'FinalCta', 'MobileStickyCta'].map((item) => (
+            <article class="library-card">
+              <span>Astro</span>
+              <strong>{item}</strong>
+            </article>
+          ))}
         </div>
       </section>
+
+      <FaqList title="Use the sections as a system, not as a template pile." items={faqs} />
+      <FinalCta title="Start from references, then compose the page." body="Use the brief, reference workflow, section library, image pipeline, and Playwright QA together. That is the minimum loop for expensive-looking landing pages." primaryLabel="Open the brief checklist" primaryHref="#brief" />
+      <MobileStickyCta href="#brief" />
     </main>
   </body>
 </html>

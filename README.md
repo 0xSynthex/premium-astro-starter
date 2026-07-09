@@ -7,6 +7,7 @@ Free/open-source starter for professional landing pages.
 - Astro static build
 - CSS design tokens in `src/styles/global.css`
 - premium editorial landing example
+- reusable Astro section library in `src/components/sections/`
 - Playwright desktop/mobile smoke + screenshot QA
 - free local image optimization via ImageMagick + cwebp
 - GitHub Pages deploy path via committed `docs/` output
@@ -65,6 +66,22 @@ Behavior:
 - unknown file types: skipped and reported
 
 Keep private/raw client material out of git unless explicitly approved for that project.
+
+## Section library
+
+Reusable sections live in `src/components/sections/`:
+
+- `HeroEditorial.astro` — Decide/Learn hero with CTA and proof chips
+- `DirectionBoard.astro` — preview / visual board shell
+- `BriefChecklist.astro` — intake checklist grid
+- `ProofBar.astro` — real proof/trust metrics
+- `ProcessSteps.astro` — how-it-works/process sequence
+- `ComparisonBand.astro` — generic vs premium comparison
+- `FaqList.astro` — native FAQ block
+- `FinalCta.astro` — final conversion block
+- `MobileStickyCta.astro` — mobile sticky CTA
+
+Rule: use sections to clarify the offer, prove trust, answer objections, or move the user toward the CTA. Delete any section that becomes filler.
 
 ## Free recommended additions
 

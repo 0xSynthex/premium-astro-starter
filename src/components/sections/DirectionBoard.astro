@@ -1,0 +1,23 @@
+---
+export interface Props {
+  eyebrow?: string;
+  subcopy?: string;
+  version?: string;
+}
+
+const { eyebrow = 'Direction board', subcopy = 'No generic SaaS filler', version = 'v1' } = Astro.props;
+---
+
+<aside class="board-wrap" aria-label="Design system preview">
+  <div class="board-glow"></div>
+  <div class="board">
+    <div class="board-head">
+      <div>
+        <p class="eyebrow">{eyebrow}</p>
+        <p class="muted">{subcopy}</p>
+      </div>
+      <span class="version">{version}</span>
+    </div>
+    <slot />
+  </div>
+</aside>
