@@ -153,7 +153,9 @@ Use the local generator:
 ~/bin/create-premium-site my-project
 ```
 
-It copies this starter without `.git`, `node_modules`, build output, `docs`, test output, or `.env*`; updates `package.json`; creates project folders; and initializes a fresh local git repo. It does not push or create a GitHub repo.
+It copies this starter without `.git`, `node_modules`, build output, `docs`, test output, or `.env*`; updates `package.json`; creates project folders; adds `copy/project-intake.md`, `references/README.md`, `qa/qa-plan.md`, `notes/project-log.md`, project `AGENTS.md`; and initializes a fresh local git repo. It does not push or create a GitHub repo.
+
+Generator templates live in `templates/` and are copied into new projects as intake/reference/QA working files.
 
 ## Free recommended additions
 

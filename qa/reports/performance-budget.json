@@ -35,8 +35,8 @@
   },
   "browser": {
     "requestCount": 5,
-    "domContentLoadedMs": 232,
-    "loadMs": 395
+    "domContentLoadedMs": 163,
+    "loadMs": 337
   },
   "passed": true,
   "failures": []

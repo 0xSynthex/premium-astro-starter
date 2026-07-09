@@ -21,7 +21,8 @@ What it does:
 - skips `.env*` files
 - updates `package.json` name
 - prepends a project checklist to `README.md`
-- creates `references/`, `assets/raw/`, and `public/images/`
+- creates `references/`, `references/screenshots/`, `references/assets/`, `assets/raw/`, `public/images/`, `qa/reports/`, and `notes/`
+- writes `copy/project-intake.md`, `references/README.md`, `qa/qa-plan.md`, `notes/project-log.md`, and project `AGENTS.md`
 - optionally runs `npm install`
 - optionally initializes a fresh git repo and first commit
 
