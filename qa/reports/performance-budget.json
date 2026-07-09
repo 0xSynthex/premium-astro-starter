@@ -24,6 +24,10 @@
         "kb": 8.8
       },
       {
+        "file": "dist/.nojekyll",
+        "kb": 0
+      },
+      {
         "file": "dist/images/.gitkeep",
         "kb": 0
       }
@@ -31,8 +35,8 @@
   },
   "browser": {
     "requestCount": 5,
-    "domContentLoadedMs": 139,
-    "loadMs": 295
+    "domContentLoadedMs": 232,
+    "loadMs": 395
   },
   "passed": true,
   "failures": []
