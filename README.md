@@ -14,7 +14,7 @@ Free/open-source starter for professional landing pages.
 - Playwright desktop/mobile smoke + screenshot QA
 - free local image optimization via ImageMagick + cwebp
 - GitHub Pages deploy path via committed `docs/` output
-- GitHub Actions workflow template kept disabled because the current GitHub token lacks `workflow` scope
+- optional GitHub Actions workflow template for automated Pages deploys
 - no paid APIs required
 
 ## Commands
@@ -52,7 +52,7 @@ This repo uses the free branch deploy path:
 3. Commit and push `docs/`.
 4. Configure GitHub Pages source as `main` branch, `/docs` folder.
 
-A GitHub Actions workflow template is stored at `.github/workflows.disabled/pages.yml.template`. To enable Actions deploy later, re-authenticate `gh` with `workflow` scope, move it to `.github/workflows/pages.yml`, and push.
+A GitHub Actions workflow template is stored at `.github/workflows.disabled/pages.yml.template`. To enable Actions deploy later, move it to `.github/workflows/pages.yml` and push.
 
 ## Security
 
@@ -101,11 +101,7 @@ Templates live in `copy/`:
 - `hero-formulas.md` — headline/subcopy/CTA structures
 - `objections.md` — map objections to page sections
 
-Full framework:
-
-```text
-/home/hermes/wiki/design/copy-conversion-framework.md
-```
+Use these project-local templates as the public copy and conversion framework.
 
 QA template:
 
